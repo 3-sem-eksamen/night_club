@@ -5,4 +5,11 @@
   --color-surface-highlight-primary: var(oklch(65.35% 0.242 9.27));
   --color-surface-highlight-secondary: var(oklch(53.17% 0.197 9.42));
   --color-bg: var(oklch(0% 0 0));
+
+  /* ==== Spacing ==== */
+  --space-xs: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --space-s: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --space-m: clamp(1.6875rem, 1.6108rem + 0.3409vw, 1.875rem);
+  --space-l: clamp(2.25rem, 2.1477rem + 0.4545vw, 2.5rem);
+  --space-xl: clamp(3.375rem, 3.2216rem + 0.6818vw, 3.75rem);
 }
