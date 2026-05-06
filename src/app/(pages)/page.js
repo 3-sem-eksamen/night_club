@@ -1,6 +1,5 @@
-import EventContainer from "@/components/Events/EventContainer";
-import Image from "next/image";
+import GalleryContainer from "@/components/Home/GalleryContainer";
 
 export default function Home() {
-  return <EventContainer />;
+  return <GalleryContainer />;
 }
