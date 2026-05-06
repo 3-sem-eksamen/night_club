@@ -4,7 +4,7 @@ const Video = () => {
   return (
     <div>
       {Videos.map((video, i) => (
-        <video key={i} width="500" height="300" controls>
+        <video key={i} width="500" height="300" controls autoPlay>
           <source src={video} type="video/mp4" />
           Your browser does not support the video tag.
         </video>

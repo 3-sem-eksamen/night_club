@@ -1,5 +1,5 @@
-import TestimonialsContainer from "@/components/Home/TestimonialsContainer";
+import VideoContainer from "@/components/Home/VideoContainer";
 
 export default function Home() {
-  return <TestimonialsContainer />;
+  return <VideoContainer />;
 }
