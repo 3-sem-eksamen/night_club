@@ -1,5 +1,5 @@
-import GalleryContainer from "@/components/Home/GalleryContainer";
+import ReviewContainer from "@/components/EventPage/ReviewContainer";
 
 export default function Home() {
-  return <GalleryContainer />;
+  return <ReviewContainer />;
 }
