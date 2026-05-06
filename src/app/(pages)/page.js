@@ -1,5 +1,5 @@
-import ReviewContainer from "@/components/EventPage/ReviewContainer";
+import TestimonialsContainer from "@/components/Home/TestimonialsContainer";
 
 export default function Home() {
-  return <ReviewContainer />;
+  return <TestimonialsContainer />;
 }
