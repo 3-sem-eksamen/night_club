@@ -14,6 +14,3 @@ const NewsCard = ({img}) => {
 }
  
 export default NewsCard;
-<section>
-
-</section>
