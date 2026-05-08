@@ -4,11 +4,11 @@ const action = async (prevdata, formData) => {
   const emailname = formData.get("email");
 
   if (!emailname) {
-    return { message: "Email skal udfyldes" };
+    return { message: "Please enter your email" };
   }
 
   if (!emailname.includes("@")) {
-    return { message: "Indtast gyldig email" };
+    return { message: "Please enter a valid email address" };
   }
 
   try {
@@ -21,12 +21,12 @@ const action = async (prevdata, formData) => {
     });
 
     if (submitEmail.ok) {
-      return { message: "Opskriften kunne ikke gemmes" };
+      return { message: "We couldn't save your email. Please try again" };
     }
 
-    return { message: `Opskriften blev gemt` };
+    return { message: "You're now subscribed!" };
   } catch (error) {
-    return { message: "Noget gik galt" };
+    return { message: "Something went wrong" };
   }
 };
 
