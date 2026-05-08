@@ -1,13 +1,15 @@
 import Image from "next/image";
 
-const ScrollCard = () => {
+const ScrollCard = ({img, key}) => {
     return ( 
         <section>
-            <Image>
+            <Image
                 src={img}
                 width={233}
                 height={217}
-            </Image>
+                alt="track thumbnail"
+                key={key}
+            />
         </section>
      );
 }
