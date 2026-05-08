@@ -13,7 +13,7 @@ const NewsContainer = () => {
       </p>
       <Form action={emailAction}>
         <input type="text" name="email" placeholder="Enter your email" />
-        {state?.message && <p>{state.message}</p>}
+        {state?.message && <span>{state.message}</span>}
         <button type="submit">{isPending ? "Submitting.." : "Submit"}</button>
       </Form>
     </section>
