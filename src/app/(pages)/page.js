@@ -1,6 +1,5 @@
-import NewsContainer from "@/components/Home/NewsContainer";
-import VideoContainer from "@/components/Home/VideoContainer";
+import Header from "@/components/GlobalComponents/Header";
 
 export default function Home() {
-  return <NewsContainer />;
+  return <Header />;
 }
