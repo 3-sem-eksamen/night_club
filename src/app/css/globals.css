@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 /* ==== Typography ==== */
+
 h1 {
   color: var(--color-text-headline);
   font-size: var(--step-5);
