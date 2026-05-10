@@ -1,10 +1,10 @@
 :root {
   /* ==== Colors ==== */
-  --color-text-headline: var(oklch(100% 0 0));
-  --color-text-body: var(oklch(82.03% 0 0));
-  --color-surface-highlight-primary: var(oklch(65.35% 0.242 9.27));
-  --color-surface-highlight-secondary: var(oklch(53.17% 0.197 9.42));
-  --color-bg: var(oklch(0% 0 0));
+  --color-text-headline: oklch(100% 0 0);
+  --color-text-body: oklch(82.03% 0 0);
+  --color-surface-highlight-primary: oklch(65.35% 0.242 9.27);
+  --color-surface-highlight-secondary: oklch(53.17% 0.197 9.42);
+  --color-bg: oklch(0% 0 0);
 
   /* ==== Spacing ==== */
   --space-xs: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);

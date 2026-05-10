@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
-/* ==== Typography ==== */
+body {
+  background-color: black;
+}
 
+/* ==== Typography ==== */
 h1 {
   color: var(--color-text-headline);
   font-size: var(--step-5);
@@ -15,11 +18,13 @@ h2 {
 }
 
 h3 {
+  color: var(--color-text-headline);
   font-size: var(--step-3);
   text-transform: uppercase;
 }
 
 p {
+  color: var(--color-text-body);
   font-size: var(--step-2);
 }
 
