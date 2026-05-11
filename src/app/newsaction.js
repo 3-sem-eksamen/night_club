@@ -1,5 +1,5 @@
 "use server";
-const action = async (prevdata, formData) => {
+const newsaction = async (prevdata, formData) => {
   await new Promise((resolve) => setTimeout(resolve, 1500));
   const emailname = formData.get("email");
 
@@ -12,7 +12,7 @@ const action = async (prevdata, formData) => {
   }
 
   try {
-    const submitEmail = await fetch("http://localhost:4000//newsletters", {
+    const submitEmail = await fetch("http://localhost:4000/newsletters", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -30,4 +30,4 @@ const action = async (prevdata, formData) => {
   }
 };
 
-export default action;
+export default newsaction;
