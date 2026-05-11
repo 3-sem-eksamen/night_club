@@ -1,7 +1,7 @@
 "use client";
 import Form from "next/form";
 import { useActionState } from "react";
-import commentaction from "@/app/commentaction";
+import commentaction from "@/app/action/commentaction";
 
 const CommentContainer = () => {
   const [commentstate, commentAction, isPending] = useActionState(commentaction, { message: "" });
