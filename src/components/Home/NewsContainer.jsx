@@ -1,10 +1,10 @@
 "use client";
 import Form from "next/form";
-import action from "@/app/action";
+import newsaction from "@/app/action/newsaction";
 import { useActionState } from "react";
 
 const NewsContainer = () => {
-  const [state, emailAction, isPending] = useActionState(action, { message: "" });
+  const [state, emailAction, isPending] = useActionState(newsaction, { message: "" });
   return (
     <section>
       <h3>Want the latest night club news</h3>
