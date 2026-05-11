@@ -1,6 +1,6 @@
 "use client";
 import Form from "next/form";
-import newsaction from "@/app/newsaction";
+import newsaction from "@/app/action/newsaction";
 import { useActionState } from "react";
 
 const NewsContainer = () => {
