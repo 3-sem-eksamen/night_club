@@ -6,6 +6,7 @@ import TrackContainer from "@/components/Home/TrackContainer";
 import VideoContainer from "@/components/Home/VideoContainer";
 import TestimonialsContainer from "@/components/Home/TestimonialsContainer";
 import NewsContainer from "@/components/Home/NewsContainer";
+import CommentContainer from "@/components/EventPage/CommentContainer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <VideoContainer />
       <TestimonialsContainer />
       <NewsContainer />
+      <CommentContainer />
     </section>
   );
 }
