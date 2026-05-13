@@ -16,7 +16,7 @@ const FetchEvent = async ()=>{
     return events.map((event)=>{
         return (
         <div key={event.id}>
-        <EventCard title={event.title} date={event.date} location={event.location} description={event.description} img={event.asset.url} imgalt={event.asset.alt}/>
+        <EventCard title={event.title} date={event.date} location={event.location} description={event.description} img={event.asset.url} imgalt={event.asset.alt} slug={event.slug} id={event.id}/>
         </div>
         );
     });
