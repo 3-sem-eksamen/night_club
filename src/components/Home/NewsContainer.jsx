@@ -1,21 +1,50 @@
 "use client";
-import Form from "next/form";
-import newsaction from "@/app/action/newsaction";
-import { useActionState } from "react";
+import {useForm} from "react-hook-form";
+import {z} from "zod";
+import {zodResolver} from "@hookform/resolvers/zod";
+import {useParams} from "next/navigation";
+
+const commentSchema = z.object({
+  email: z.string("Email is required").email("Invalid email address").refine(async(email)=>{const response = await fetch(`http://localhost:4000/newsletters?email=${email}`,{cache:"no-store",}); const dataEmail = await response.json(); return dataEmail.length === 0;},{message:"This email is already subscribed"}),
+});
 
 const NewsContainer = () => {
-  const [state, emailAction, isPending] = useActionState(newsaction, { message: "" });
+  const params = useParams();
+  console.log(params);
+  const {
+    register,
+    handleSubmit,
+    formState: {errors, isSubmitting}, 
+    reset,  
+  } = useForm({
+    resolver:zodResolver(commentSchema),
+    mode: "onChange",
+  });
+
+  const onSubmit = async (data) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const date = new Date().toISOString();
+    console.log(data)
+    await fetch("http://localhost:4000/newsletters", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: data.email ,
+        
+      }),
+    });
+
+    reset();
+  };
   return (
     <section>
-      <h3>Want the latest night club news</h3>
-      <p>
-        Subscribe to our newsletter and never miss an <span>Event</span>
-      </p>
-      <Form action={emailAction}>
-        <input type="text" name="email" placeholder="Enter your email" />
-        {state?.message && <span>{state.message}</span>}
-        <button type="submit">{isPending ? "Submitting.." : "Submit"}</button>
-      </Form>
+      <form onSubmit={handleSubmit(onSubmit)}>
+     
+        <input {...register("email")} type="text" name="email" placeholder="Your email" />
+        {errors.email && <p>{errors.email.message}</p>}
+        <button disabled={isSubmitting} type="submit">{isSubmitting ? "Subscribing..." : "Subscribe"}</button>
+        
+      </form>
     </section>
   );
 };

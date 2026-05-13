@@ -19,7 +19,6 @@ export default function Home() {
       <VideoContainer />
       <TestimonialsContainer />
       <NewsContainer />
-      <CommentContainer />
     </section>
   );
 }
