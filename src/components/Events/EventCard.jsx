@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { eventDate} from "../../app/dateConverter.js";
+import Link from "next/link.js";
 
-const EventCard = ({ title, date, location, description, img, imgalt }) => {
+const EventCard = ({ title, date, location, description, img, imgalt, slug, id }) => {
     return (  
         <div className="">
             <Image src={`http://localhost:4000${img}`} alt={imgalt} className="w-full h-full object-cover" width={500} height={500} />
@@ -11,7 +12,9 @@ const EventCard = ({ title, date, location, description, img, imgalt }) => {
             <h2 className="">{title}</h2>
             <h3><span className="text-[var(--color-surface-highlight-primary)]">{eventDate(date)}</span>{location}</h3>
             <p>{description}</p>
-            <button></button>
+            <Link href={`/EventPage/${slug}/${id}`}>
+            <button>Read more</button>
+            </Link>
             </div>
         </div>
     );
