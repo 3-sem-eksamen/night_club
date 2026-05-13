@@ -1,7 +1,7 @@
 "use client";
-import {useForm} from "react-hook-form";
-import {z} from "zod";
-import {zodResolver} from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useParams } from "next/navigation";
 
 const commentSchema = z.object({
@@ -12,28 +12,27 @@ const commentSchema = z.object({
 
 const CommentContainer = () => {
   const params = useParams();
-  console.log("KIIIIG", params);
   const {
     register,
     handleSubmit,
-    formState: {errors, isSubmitting}, 
-    reset,  
+    formState: { errors, isSubmitting },
+    reset,
   } = useForm({
-    resolver:zodResolver(commentSchema),
+    resolver: zodResolver(commentSchema),
     mode: "onChange",
   });
 
   const onSubmit = async (data) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     const date = new Date().toISOString();
-    console.log(data)
+    console.log(data);
     await fetch("http://localhost:4000/comments", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        eventId: 1,
-        name: data.name ,
-        content: data.content ,
+        eventId: params.id,
+        name: data.name,
+        content: data.content,
         date: date,
       }),
     });
@@ -49,8 +48,9 @@ const CommentContainer = () => {
         {errors.email && <p>{errors.email.message}</p>}
         <textarea {...register("content")} name="content" rows={4} placeholder="Your comment" />
         {errors.content && <p>{errors.content.message}</p>}
-        <button disabled={isSubmitting} type="submit">{isSubmitting ? "Sender..." : "Send"}</button>
-        
+        <button disabled={isSubmitting} type="submit">
+          {isSubmitting ? "Sender..." : "Send"}
+        </button>
       </form>
     </section>
   );
