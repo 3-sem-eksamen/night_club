@@ -2,7 +2,7 @@
 import {useForm} from "react-hook-form";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {useParams} from "next/navigation";
+import { useParams } from "next/navigation";
 
 const commentSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -12,7 +12,7 @@ const commentSchema = z.object({
 
 const CommentContainer = () => {
   const params = useParams();
-  console.log(params);
+  console.log("KIIIIG", params);
   const {
     register,
     handleSubmit,

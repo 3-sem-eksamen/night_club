@@ -1,5 +1,9 @@
-const slug = () => {
-  return <h1 className="color-sky-200">TEST</h1>;
-};
+import CommentContainer from "@/components/ContactUs/Contact";
 
-export default slug;
+export default function EventPage({ params }) {
+  return (
+    <section>
+      <CommentContainer />
+    </section>
+  );
+}
