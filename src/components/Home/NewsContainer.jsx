@@ -2,7 +2,6 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useParams } from "next/navigation";
 
 const NewsletterSchema = z.object({
   email: z
@@ -19,8 +18,6 @@ const NewsletterSchema = z.object({
 });
 
 const NewsContainer = () => {
-  const params = useParams();
-  console.log(params);
   const {
     register,
     handleSubmit,
