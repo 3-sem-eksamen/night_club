@@ -1,4 +1,4 @@
-import CommentContainer from "@/components/ContactUs/Contact";
+import CommentContainer from "@/components/EventPage/CommentContainer";
 
 export default function EventPage({ params }) {
   return (
