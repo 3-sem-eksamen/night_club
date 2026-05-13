@@ -2,7 +2,6 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useParams } from "next/navigation";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -10,9 +9,7 @@ const contactSchema = z.object({
   content: z.string().min(1, "Comment content is required"),
 });
 
-const CommentContainer = () => {
-  const params = useParams();
-  console.log(params);
+const Contact = () => {
   const {
     register,
     handleSubmit,
@@ -27,7 +24,7 @@ const CommentContainer = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     const date = new Date().toISOString();
     console.log(data);
-    await fetch("http://localhost:4000/comments", {
+    await fetch("http://localhost:4000/contact_messages", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -57,4 +54,4 @@ const CommentContainer = () => {
   );
 };
 
-export default CommentContainer;
+export default Contact;
