@@ -1,9 +1,13 @@
-import CommentContainer from "@/components/EventPage/CommentContainer";
+import Link from "next/link";
 
-export default function EventPage({ params }) {
+export default async function EventPage({ params }) {
+  const { slug, id } = await params;
+
   return (
     <section>
-      <CommentContainer />
+      <Link href={`/BookTable?eventId=${id}`}>
+        <button>Book Table</button>
+      </Link>
     </section>
   );
 }

@@ -7,10 +7,12 @@ import VideoContainer from "@/components/Home/VideoContainer";
 import TestimonialsContainer from "@/components/Home/TestimonialsContainer";
 import NewsContainer from "@/components/Home/NewsContainer";
 import CommentContainer from "@/components/EventPage/CommentContainer";
+import BookTable from "@/components/BookTable/BookTable";
 
 export default function Home() {
   return (
     <section>
+      <BookTable />
       <Header />
       {/* <WelcomeContainer /> */}
       {/* <FeaturedContainer /> */}
