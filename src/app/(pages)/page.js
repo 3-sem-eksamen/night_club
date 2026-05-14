@@ -12,16 +12,8 @@ import BookTable from "@/components/BookTable/BookTable";
 export default function Home() {
   return (
     <section>
-      <BookTable />
       <Header />
-      {/* <WelcomeContainer /> */}
-      {/* <FeaturedContainer /> */}
-      <GalleryContainer />
-      {/* <TrackContainer /> */}
-      <VideoContainer />
-      <TestimonialsContainer />
-      <NewsContainer />
-      <CommentContainer />
+      <TrackContainer />
     </section>
   );
 }
