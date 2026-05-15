@@ -31,3 +31,38 @@ p {
 li {
   color: var(--color-text-headline);
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rlh;
+  padding-inline: max(1rlh, 50% - 600px / 2);
+  background: lavender;
+}
+
+nav {
+  ul {
+    border: 0;
+    list-style-type: "";
+    background: transparent;
+    gap: 0.5rlh 1rlh;
+    &:popover-open {
+      position-area: bottom span-left;
+      display: grid;
+      padding: 1rlh;
+      background: lavender;
+      border: revert;
+    }
+    @media not (width <= 800px) {
+      margin: unset;
+      position: unset;
+      display: flex;
+    }
+  }
+  button {
+    @media not (width <= 800px) {
+      display: none;
+    }
+  }
+}

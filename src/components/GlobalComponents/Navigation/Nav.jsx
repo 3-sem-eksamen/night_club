@@ -1,7 +1,11 @@
 import Link from "next/link";
+import { IoIosMenu } from "react-icons/io";
+
 const Nav = () => {
   return (
-    <ul className="flex gap-8">
+  <nav>
+          <button popovertarget="menu"><IoIosMenu /></button>
+    <ul popover id="menu">
       <li>
         <Link href="/">Home</Link>
       </li>
@@ -15,6 +19,8 @@ const Nav = () => {
         <Link href="/ContactUs">Contact us</Link>
       </li>
   </ul> 
+  </nav>
+
   );
 };
 
