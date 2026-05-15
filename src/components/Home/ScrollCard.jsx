@@ -1,16 +1,18 @@
 import Image from "next/image";
 
-const ScrollCard = ({img, key}) => {
+const ScrollCard = ({img, isActive, onClick}) => {
     return ( 
-        <section>
+            <div
+            onClick={onClick}>
+            
+            
             <Image
-                src={img}
+                src={img.image}
                 width={233}
                 height={217}
                 alt="track thumbnail"
-                key={key}
             />
-        </section>
+            </div>
      );
 }
  

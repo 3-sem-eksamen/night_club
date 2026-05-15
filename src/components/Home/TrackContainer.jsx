@@ -1,11 +1,12 @@
+"use client"
 import PlayingCard from "./PlayingCard";
-import {useStae} from ".react";
+import {useState} from "react";
 import ScrollContainer from "./ScrollContainer";
 
 const media = [
-  {image: "/assets/content-img/track_thumb.jpg", track:"/assets/media/black-box-funky.mp3" }
-  {image: "/assets/content-img/track1.jpg", track:"/assets/media/euphoria.mp3" }
-  {image: "/assets/content-img/track2.jpg", track:"/assets/media/fashion-red-tape.mp3" }
+  {image: "/assets/content-img/track_thumb.jpg", track:"/assets/media/black-box-funky.mp3", title:"Black box funky" },
+  {image: "/assets/content-img/track1.jpg", track:"/assets/media/euphoria.mp3", title:"Euphoria" },
+  {image: "/assets/content-img/track2.jpg", track:"/assets/media/fashion-red-tape.mp3", title:"Fashion red tape" }
 ]
 
 const TrackContainer = () => {
@@ -28,7 +29,7 @@ const [currentMedia, setCurrentMedia] = useState(0);
   return (
     <section>
       <PlayingCard
-      item={media[currentIndex]}
+      item={media[currentMedia]}
       handleNext={handleNext}
       handlePrev={handlePrev}
        />
