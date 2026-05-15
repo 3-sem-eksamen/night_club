@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 
-const FeaturedCard = ({eventImg, title, date, imgalt}) => {
+const EventsOfTheMonthCard = ({eventImg, title, date, imgalt}) => {
     console.log(eventImg)
     return ( 
          <div>
@@ -12,4 +12,4 @@ const FeaturedCard = ({eventImg, title, date, imgalt}) => {
     );
 }
  
-export default FeaturedCard;
+export default EventsOfTheMonthCard;

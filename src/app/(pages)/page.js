@@ -8,11 +8,14 @@ import TestimonialsContainer from "@/components/Home/TestimonialsContainer";
 import NewsContainer from "@/components/Home/NewsContainer";
 import CommentContainer from "@/components/EventPage/CommentContainer";
 import BookTable from "@/components/BookTable/BookTable";
+import EventsOfTheMonthContainer from "@/components/Home/EventsOfTheMonthContainer";
+import FeaturedCard from "@/components/Home/FeaturedCard";
 
 export default function Home() {
   return (
     <section>
       <Header />
+      <FeaturedContainer />
       <TrackContainer />
     </section>
   );
