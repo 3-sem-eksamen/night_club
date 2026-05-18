@@ -33,27 +33,77 @@ li {
 }
 
 nav {
+  .menu-wrapper:popover-open {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+
+    border: none;
+  }
+
   ul {
     border: 0;
-    list-style-type: "";
+    list-style-type: none;
     background: transparent;
     gap: 0.5rlh 1rlh;
-    &:popover-open {
-      position-area: bottom span-left;
-      display: grid;
-      padding: 1rlh;
-      border: revert;
+    display: grid;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  @media not (width < 800px) {
+    .menu-wrapper {
+      position: static;
+      inset: unset;
+      width: auto;
+      height: auto;
+      background: none;
+      backdrop-filter: none;
+      display: block;
     }
-    @media not (width < 800px) {
+
+    ul {
       margin: unset;
       position: unset;
       display: flex;
       max-width: 33rem;
+      font-size: inherit;
+      font-weight: inherit;
     }
-  }
-  button {
-    @media not (width < 800px) {
+
+    button {
       display: none;
     }
   }
+}
+
+.open-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+}
+
+#menu:popover-open ~ .open-btn {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: none;
+}
+
+#menu:popover-open .close-btn {
+  display: block;
 }
