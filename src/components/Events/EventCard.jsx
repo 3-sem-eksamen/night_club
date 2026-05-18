@@ -13,7 +13,7 @@ const EventCard = ({ title, date, location, description, img, imgalt, slug, id }
             <h2 className="">{title}</h2>
             <h3><span className="text-[var(--color-surface-highlight-primary)]">{eventDate(date)}</span>{location}</h3>
             <p>{description}</p>
-            <Link href={`/EventPage/${slug}/${id}`}>
+            <Link className="mx-auto" href={`/EventPage/${slug}/${id}`}>
             <PrimaryBtn text="Read more"/>
             </Link>
             </div>
