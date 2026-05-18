@@ -14,7 +14,7 @@ const bookTableSchema = z.object({
   content: z.string().min(1, "Comment content is required"),
 });
 
-const BookTable = ({ events, setAvailableTables, availableTables, setTakenTables, takenTables }) => {
+const BookTable = ({ events, setAvailableTables, filteredAvailableTables, setTakenTables, takenTables, numberOfGuest, setNumberOfGuest, tables }) => {
   const params = useSearchParams();
   const eventId = params.get("eventId");
 
@@ -38,6 +38,10 @@ const BookTable = ({ events, setAvailableTables, availableTables, setTakenTables
       console.log("Ledige borde:", result);
     })();
   }
+
+  const handleGuestChange = (e) => {
+    setNumberOfGuest(e.target.value);
+  };
 
   const {
     register,
@@ -87,8 +91,8 @@ const BookTable = ({ events, setAvailableTables, availableTables, setTakenTables
             </option>
           ))}
         </select>
-        {errors.eventNight && <p>{errors.eventNight.message}</p>}
-        <select {...register("guests")} name="guests">
+        {errors.eventNight && <p>{errors.eventNight.message} </p>}
+        <select {...register("guests")} name="guests" onChange={handleGuestChange}>
           <option value="">Number of guests</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -102,12 +106,13 @@ const BookTable = ({ events, setAvailableTables, availableTables, setTakenTables
         {errors.guests && <p>{errors.guests.message}</p>}
         <select {...register("table")} name="table">
           <option value="">Select table</option>
-          {availableTables.map((table) => (
+          {filteredAvailableTables.map((table) => (
             <option key={table} value={table}>
               Bord {table}
             </option>
           ))}
         </select>
+        {filteredAvailableTables.length === 0 && <p>Der er ingen borde der passer til dit valg</p>}
         {errors.table && <p>{errors.table.message}</p>}
         <input {...register("phone")} type="text" name="phone" placeholder="Your phone number" />
         {errors.phone && <p>{errors.phone.message}</p>}
