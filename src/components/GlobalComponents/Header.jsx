@@ -9,7 +9,7 @@ const Header = () => {
       <Image src="/assets/Logo.png" width={184} height={45} alt="logo" />
     <nav>
     <div id="menu" popover="auto" className="menu-wrapper">
-    <button popovertarget="menu" popovertargetaction="toggle" className="menu-btn close-btn">
+    <button popoverTarget="menu" popoverTargetaction="toggle" className="menu-btn close-btn">
       <ImCross className="text-white w-8 h-8" />
     </button>
 
@@ -21,7 +21,7 @@ const Header = () => {
     </ul>
     </div>
 
-    <button popovertarget="menu" popovertargetaction="toggle" className="menu-btn open-btn">
+    <button popoverTarget="menu" popoverTargetaction="toggle" className="menu-btn open-btn">
       <IoIosMenu className="text-white w-16 h-16" />
     </button>
 </nav>
