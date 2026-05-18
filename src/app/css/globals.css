@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 * {
-  background-color: pink;
+  background-color: black;
 }
 
 /* ==== Typography ==== */
@@ -32,15 +32,6 @@ li {
   color: var(--color-text-headline);
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-block: 1rlh;
-  padding-inline: max(1rlh, 50% - 600px / 2);
-  background: lavender;
-}
-
 nav {
   ul {
     border: 0;
@@ -51,17 +42,17 @@ nav {
       position-area: bottom span-left;
       display: grid;
       padding: 1rlh;
-      background: lavender;
       border: revert;
     }
-    @media not (width <= 800px) {
+    @media not (width < 800px) {
       margin: unset;
       position: unset;
       display: flex;
+      max-width: 33rem;
     }
   }
   button {
-    @media not (width <= 800px) {
+    @media not (width < 800px) {
       display: none;
     }
   }

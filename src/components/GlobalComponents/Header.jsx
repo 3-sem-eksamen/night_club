@@ -4,11 +4,11 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header>
+    <header className="flex justify-between items-center py-[1rlh] max-w-[25rem] md:max-w-6xl mx-auto">
       <Image src="/assets/Logo.png" width={184} height={45} alt="logo" />
       <nav>
         <button popoverTarget="menu">
-          <IoIosMenu />
+          <IoIosMenu className="text-white w-16 h-16" />
         </button>
         <ul id="menu" popover="auto">
           <li>
