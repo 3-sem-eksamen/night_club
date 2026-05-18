@@ -14,7 +14,7 @@ const bookTableSchema = z.object({
   content: z.string().min(1, "Comment content is required"),
 });
 
-const BookTable = ({ events, setAvailableTables, availableTables }) => {
+const BookTable = ({ events, setAvailableTables, availableTables, setTakenTables, takenTables }) => {
   const params = useSearchParams();
   const eventId = params.get("eventId");
 
@@ -25,6 +25,7 @@ const BookTable = ({ events, setAvailableTables, availableTables }) => {
     const reservations = await response.json();
 
     const taken = reservations.map((r) => Number(r.table));
+    setTakenTables(taken);
 
     const allTables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
     const available = allTables.filter((t) => !taken.includes(t));
