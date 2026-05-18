@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { eventDate} from "../../app/dateConverter.js";
 import Link from "next/link.js";
+import PrimaryBtn from "../GlobalComponents/PrimaryBtn.jsx";
 
 const EventCard = ({ title, date, location, description, img, imgalt, slug, id }) => {
     return (  
@@ -13,7 +14,7 @@ const EventCard = ({ title, date, location, description, img, imgalt, slug, id }
             <h3><span className="text-[var(--color-surface-highlight-primary)]">{eventDate(date)}</span>{location}</h3>
             <p>{description}</p>
             <Link href={`/EventPage/${slug}/${id}`}>
-            <button>Read more</button>
+            <PrimaryBtn text="Read more"/>
             </Link>
             </div>
         </div>
