@@ -8,11 +8,11 @@ const Footer = () => {
             <div>
             <Image className="mx-auto" src="/assets/icon/Logo_main.svg" alt="logo" width={183} height={43} />
             <h4>location</h4>
-            <p>Kompagnistræde 278</p>
-            <p>1265 Købehavn K</p>
+            <h5>Kompagnistræde 278</h5>
+            <h5>1265 Købehavn K</h5>
             <h4>Opening Hours</h4>
-            <p>WED - THU 10:30 PMTO 3 AM</p>
-            <p>SAT - SUN: 11 PM TO 5 AM</p>
+            <h5>WED - THU 10:30 PMTO 3 AM</h5>
+            <h5>SAT - SUN: 11 PM TO 5 AM</h5>
             </div>
             <div className="hidden md:block">
             <NewsContainer />
