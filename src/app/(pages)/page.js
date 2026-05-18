@@ -7,7 +7,7 @@ import VideoContainer from "@/components/Home/VideoContainer";
 import TestimonialsContainer from "@/components/Home/TestimonialsContainer";
 import NewsContainer from "@/components/Home/NewsContainer";
 import CommentContainer from "@/components/EventPage/CommentContainer";
-import BookTable from "@/components/BookTable/BookTable";
+import BookTable from "@/components/BookTable/BookTableForm";
 import EventsOfTheMonthContainer from "@/components/Home/EventsOfTheMonthContainer";
 import FeaturedCard from "@/components/Home/FeaturedCard";
 

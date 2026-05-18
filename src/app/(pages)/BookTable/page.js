@@ -1,7 +1,8 @@
 import TablesContainer from "@/components/BookTable/TablesContainer";
 import Header from "@/components/GlobalComponents/Header";
 import Subhero from "@/components/GlobalComponents/Subhero";
-import BookTable from "@/components/BookTable/BookTable";
+import BookTable from "@/components/BookTable/BookTableForm";
+import BookTableContainer from "@/components/BookTable/BookTableContainer";
 
 export default async function BookTablePage() {
   const response = await fetch("http://localhost:4000/events");
@@ -10,8 +11,7 @@ export default async function BookTablePage() {
     <section>
       <Header />
       <Subhero />
-      <TablesContainer />
-      <BookTable events={events} />
+      <BookTableContainer events={events} />
     </section>
   );
 }

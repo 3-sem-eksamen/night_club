@@ -14,9 +14,29 @@ const bookTableSchema = z.object({
   content: z.string().min(1, "Comment content is required"),
 });
 
-const BookTable = ({ events }) => {
+const BookTable = ({ events, setAvailableTables, availableTables }) => {
   const params = useSearchParams();
   const eventId = params.get("eventId");
+
+  const handleEventChange = async (e) => {
+    const id = e.target.value;
+
+    const response = await fetch(`http://localhost:4000/reservations?eventId=${id}`);
+    const reservations = await response.json();
+
+    const taken = reservations.map((r) => Number(r.table));
+
+    const allTables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    const available = allTables.filter((t) => !taken.includes(t));
+    setAvailableTables(available);
+  };
+
+  if (eventId && availableTables.length === 0) {
+    (async () => {
+      const result = await handleEventChange({ target: { value: eventId } });
+      console.log("Ledige borde:", result);
+    })();
+  }
 
   const {
     register,
@@ -56,7 +76,7 @@ const BookTable = ({ events }) => {
         {errors.name && <p>{errors.name.message}</p>}
         <input {...register("email")} type="text" name="email" placeholder="Your email" />
         {errors.email && <p>{errors.email.message}</p>}
-        <select {...register("eventNight")} name="eventNight">
+        <select {...register("eventNight")} name="eventNight" onChange={handleEventChange}>
           <option value="">Select event night</option>
 
           {events.map((event) => (
@@ -81,8 +101,11 @@ const BookTable = ({ events }) => {
         {errors.guests && <p>{errors.guests.message}</p>}
         <select {...register("table")} name="table">
           <option value="">Select table</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
+          {availableTables.map((table) => (
+            <option key={table} value={table}>
+              Bord {table}
+            </option>
+          ))}
         </select>
         {errors.table && <p>{errors.table.message}</p>}
         <input {...register("phone")} type="text" name="phone" placeholder="Your phone number" />
