@@ -1,13 +1,13 @@
 "use client";
-const Filter = ({setFilter}) => {
-    return ( 
-        <section>
-        <button onClick={() => setFilter("")}>All</button>
-        <button onClick={() => setFilter("table1")}>Table for 4 people</button>
-        <button onClick={() => setFilter("table2")}>Table for 6 people</button>
-        <button onClick={() => setFilter("table3")}>Table for 8 people</button>
-        </section>
-     );
-}
- 
+const Filter = ({ setNumberOfGuest }) => {
+  return (
+    <section>
+      <button onClick={() => setNumberOfGuest("")}>All</button>
+      <button onClick={() => setNumberOfGuest("4")}>Table for 4 people</button>
+      <button onClick={() => setNumberOfGuest("6")}>Table for 6 people</button>
+      <button onClick={() => setNumberOfGuest("8")}>Table for 8 people</button>
+    </section>
+  );
+};
+
 export default Filter;
