@@ -6,7 +6,7 @@ const EventDetailCard = async ({ id }) => {
   const event = await response.json();
 
   return (
-    <section className="max-w-5xl mx-auto text-white px-6 py-12 space-y-12">
+    <section className="text-white px-6 py-12 space-y-12">
       <div className="w-full overflow-hidden">
         <Image
           src={`http://localhost:4000${event.heroAsset.url}`}
