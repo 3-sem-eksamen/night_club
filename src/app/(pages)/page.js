@@ -10,6 +10,7 @@ import CommentContainer from "@/components/EventPage/CommentContainer";
 import BookTable from "@/components/BookTable/BookTableForm";
 import EventsOfTheMonthContainer from "@/components/Home/EventsOfTheMonthContainer";
 import FeaturedCard from "@/components/Home/FeaturedCard";
+import Footer from "@/components/GlobalComponents/Footer/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Header />
       <FeaturedContainer />
       <TrackContainer />
+      <Footer />
     </section>
   );
 }
