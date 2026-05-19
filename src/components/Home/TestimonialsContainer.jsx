@@ -8,7 +8,7 @@ const TestimonialsContainer = () => {
 
 const FetchTestimonials  = async () => {
   "use server";
-  const response = await fetch(`${process.env.api_url}/testimonials`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/testimonials`);
   const Testimonials = await response.json();
 
   return Testimonials.map((testimonial) => {

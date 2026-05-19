@@ -8,7 +8,7 @@ import { FaSnapchatGhost } from "react-icons/fa";
 const TestimonialsCard = ({ name, content, img, facebookLink, twitterLink }) => {
     return ( 
         <section>
-        <Image src={`${process.env.api_url}${img}`} width={170} height={170} />
+        <Image src={`${process.env.NEXT_PUBLIC_API_URL}/${img}`} width={170} height={170} />
         <h3>{name}</h3>
         <p>{content}</p>
         <Link href={facebookLink}><FaFacebookF /></Link>

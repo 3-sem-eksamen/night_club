@@ -11,7 +11,7 @@ const GalleryContainer = () => {
 
 const FetchGallery = async () => {
   "use server";
-  const response = await fetch(`${process.env.api_url}/gallery`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/gallery`);
   const GalleryImages = await response.json();
 
   return GalleryImages.map((img) => {

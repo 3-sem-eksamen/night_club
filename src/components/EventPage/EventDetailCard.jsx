@@ -2,14 +2,14 @@ import Image from "next/image";
 import { eventDate } from "@/app/dateConverter";
 
 const EventDetailCard = async ({ id }) => {
-  const response = await fetch(`${process.env.api_url}/events/${id}`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events/${id}`);
   const event = await response.json();
 
   return (
     <section className="text-white px-6 py-12 space-y-12">
       <div className="w-full overflow-hidden">
         <Image
-          src={`${process.env.api_url}${event.heroAsset.url}`}
+          src={`${process.env.NEXT_PUBLIC_API_URL}/${event.heroAsset.url}`}
           alt={event.title}
           width={event.heroAsset.width}
           height={event.heroAsset.height}
