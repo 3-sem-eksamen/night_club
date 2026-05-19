@@ -16,7 +16,6 @@ export default function Home() {
   return (
     <section>
       <Header />
-      <FeaturedContainer />
       <TrackContainer />
       <Footer />
     </section>
