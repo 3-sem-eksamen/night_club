@@ -9,7 +9,7 @@ const EventContainer = () => {
 
 const FetchEvent = async ()=>{
     "use server"
-    const response = await fetch(`${process.env.api_url}/events`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events`)
     const events = await response.json()
     console.log(events[1].asset.url)
 

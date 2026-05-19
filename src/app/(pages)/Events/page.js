@@ -8,7 +8,7 @@ export default function Events() {
     <section>
       <Header />
       <Subhero />
-      <EventCard />
+      <EventContainer />
     </section>
   );
 }

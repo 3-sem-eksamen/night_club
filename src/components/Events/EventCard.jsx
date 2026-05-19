@@ -5,10 +5,9 @@ import Link from "next/link.js";
 import PrimaryBtn from "../GlobalComponents/PrimaryBtn.jsx";
 
 const EventCard = ({ title, date, location, description, img, imgalt, slug, id }) => {
-  console.log("heeeeej", img);
   return (
     <div className="">
-      <Image src={`${process.env.api_url}${img}`} alt={imgalt} className="w-full h-full object-cover" width={500} height={500} />
+      <Image src={`${process.env.NEXT_PUBLIC_API_URL}/${img}`} alt={imgalt} className="w-full h-full object-cover" width={500} height={500} />
       <div className="max-w-md mx-auto flex flex-col gap-[var(--space-s)]">
         <h2 className="">{title}</h2>
         <h3>
