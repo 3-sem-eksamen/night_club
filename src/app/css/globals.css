@@ -126,3 +126,11 @@ nav {
 .gradient_line {
   background: radial-gradient(var(--color-surface-highlight-primary) 0%, transparent 90%);
 }
+
+.filter_knap {
+  color: var(--color-text-headline);
+  border: 1px solid var(--color-text-headline);
+  padding: 2px;
+  text-transform: uppercase;
+  font-size: var(--step--1);
+}
