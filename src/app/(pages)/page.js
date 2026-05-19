@@ -16,7 +16,14 @@ export default function Home() {
   return (
     <section>
       <Header />
+      <WelcomeContainer />
+      <FeaturedContainer />
+      <EventsOfTheMonthContainer />
+      <GalleryContainer />
       <TrackContainer />
+      <VideoContainer />
+      <TestimonialsContainer />
+      <NewsContainer />
       <Footer />
     </section>
   );

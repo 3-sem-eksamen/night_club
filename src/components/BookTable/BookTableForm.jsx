@@ -21,7 +21,7 @@ const BookTable = ({ events, setAvailableTables, filteredAvailableTables, setTak
   const handleEventChange = async (e) => {
     const id = e.target.value;
 
-    const response = await fetch(`${process.env.api_url}/reservations?eventId=${id}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/reservations?eventId=${id}`);
     const reservations = await response.json();
 
     const taken = reservations.map((r) => Number(r.table));
