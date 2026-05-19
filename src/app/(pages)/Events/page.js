@@ -8,7 +8,7 @@ export default function Events() {
   return (
     <section>
       <Header />
-      <Subhero />
+      <Subhero title="Events" />
       <EventContainer />
       <Footer />
     </section>
