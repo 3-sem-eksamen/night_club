@@ -9,7 +9,7 @@ export default async function BookTablePage() {
   return (
     <section>
       <Header />
-      <Subhero />
+      <Subhero title="Book table" />
       <BookTableContainer events={events} />
       <Footer />
     </section>

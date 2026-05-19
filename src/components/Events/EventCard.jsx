@@ -9,7 +9,7 @@ const EventCard = ({ title, date, location, description, img, imgalt, slug, id }
     <article className="flex flex-wrap even:flex-row-reverse">
       <Image src={`${process.env.NEXT_PUBLIC_API_URL}/${img}`} alt={imgalt} width={500} height={500} className="min-w-[500px] flex-1 object-cover" />
 
-      <div className="min-w-[500px] flex-1 flex flex-col gap-2 p-4">
+      <div className="min-w-[500px] flex-1 flex flex-col">
         <h2>{title}</h2>
 
         <h3>
