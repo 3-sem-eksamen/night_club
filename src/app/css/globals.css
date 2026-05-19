@@ -134,3 +134,23 @@ nav {
   text-transform: uppercase;
   font-size: var(--step--1);
 }
+
+input {
+  color: var(--color-text-headline);
+  width: 100%;
+  border: 1px solid var(--color-text-headline);
+  padding: 4px;
+}
+
+select {
+  color: var(--color-text-headline);
+  width: 100%;
+  border: 1px solid var(--color-text-headline);
+  padding: 6px;
+}
+
+textarea {
+  color: var(--color-text-headline);
+  width: 100%;
+  border: 1px solid var(--color-text-headline);
+}
