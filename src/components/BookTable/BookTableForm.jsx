@@ -46,6 +46,7 @@ const BookTable = ({ events, setAvailableTables, filteredAvailableTables, setTak
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(bookTableSchema),
@@ -54,6 +55,8 @@ const BookTable = ({ events, setAvailableTables, filteredAvailableTables, setTak
       eventNight: eventId ?? "",
     },
   });
+
+  const eventNightValue = watch("eventNight");
 
   const onSubmit = async (data) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -73,6 +76,7 @@ const BookTable = ({ events, setAvailableTables, filteredAvailableTables, setTak
 
     reset();
   };
+
   return (
     <section>
       <h2>Book a table</h2>
@@ -121,7 +125,7 @@ const BookTable = ({ events, setAvailableTables, filteredAvailableTables, setTak
               </option>
             ))}
           </select>
-          {filteredAvailableTables.length === 0 && <p>Der er ingen borde der passer til dit valg</p>}
+          {eventNightValue && numberOfGuest && filteredAvailableTables.length === 0 && <p>Der er ingen borde der passer til dit valg</p>}
           {errors.table && <p>{errors.table.message}</p>}
         </div>
         <div>
@@ -134,7 +138,7 @@ const BookTable = ({ events, setAvailableTables, filteredAvailableTables, setTak
         </div>
         <button disabled={isSubmitting} type="submit">
           {isSubmitting ? "Sender..." : "Send"}
-        </button>{" "}
+        </button>
       </form>
     </section>
   );
