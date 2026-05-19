@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-* {
+body {
   background-color: black;
 }
 
@@ -44,6 +44,7 @@ li {
   color: var(--color-text-headline);
 }
 
+/************* Header ****************/
 nav {
   .menu-wrapper:popover-open {
     position: fixed;
@@ -118,4 +119,10 @@ nav {
 
 #menu:popover-open .close-btn {
   display: block;
+}
+
+/*************** Gradient line ********/
+
+.gradient_line {
+  background: radial-gradient(var(--color-surface-highlight-primary) 0%, transparent 90%);
 }
