@@ -21,7 +21,7 @@ const BookTable = ({ events, setAvailableTables, filteredAvailableTables, setTak
   const handleEventChange = async (e) => {
     const id = e.target.value;
 
-    const response = await fetch(`http://localhost:4000/reservations?eventId=${id}`);
+    const response = await fetch(`${process.env.api_url}/reservations?eventId=${id}`);
     const reservations = await response.json();
 
     const taken = reservations.map((r) => Number(r.table));
@@ -57,7 +57,7 @@ const BookTable = ({ events, setAvailableTables, filteredAvailableTables, setTak
 
   const onSubmit = async (data) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    await fetch("http://localhost:4000/reservations", {
+    await fetch(`${process.env.api_url}/reservations`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

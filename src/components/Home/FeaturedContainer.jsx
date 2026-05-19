@@ -10,7 +10,7 @@ const FeaturedContiner = () => {
 
 const FetchEvent = async ()=>{
     "use server"
-    const response = await fetch("http://localhost:4000/events")
+    const response = await fetch(`${process.env.api_url}/events`)
     const events = await response.json()
 
     const featuredEvents = events.filter(event => event.isFeatured === true);

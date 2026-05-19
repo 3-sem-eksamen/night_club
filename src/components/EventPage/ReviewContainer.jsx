@@ -12,7 +12,7 @@ const ReviewContainer = () => {
 
 const FetchReview = async () => {
   "use server";
-  const response = await fetch("http://localhost:4000/comments");
+  const response = await fetch(`${process.env.api_url}/comments`);
   const Reviews = await response.json();
 
   return Reviews.map((review) => {
