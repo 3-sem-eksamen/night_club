@@ -26,7 +26,7 @@ const CommentContainer = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     const date = new Date().toISOString();
     console.log(data);
-    await fetch("http://localhost:4000/comments", {
+    await fetch(`${process.env.api_url}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

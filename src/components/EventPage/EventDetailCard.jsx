@@ -2,14 +2,14 @@ import Image from "next/image";
 import { eventDate } from "@/app/dateConverter";
 
 const EventDetailCard = async ({ id }) => {
-  const response = await fetch(`http://localhost:4000/events/${id}`);
+  const response = await fetch(`${process.env.api_url}/events/${id}`);
   const event = await response.json();
 
   return (
     <section className="text-white px-6 py-12 space-y-12">
       <div className="w-full overflow-hidden">
         <Image
-          src={`http://localhost:4000${event.heroAsset.url}`}
+          src={`${process.env.api_url}${event.heroAsset.url}`}
           alt={event.title}
           width={event.heroAsset.width}
           height={event.heroAsset.height}
@@ -31,7 +31,7 @@ const EventDetailCard = async ({ id }) => {
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div className="px-3 py-2 text-center bg-white/5 border border-[oklch(var(--color-surface-highlight-primary))]">
-          <span className="block text-[oklch(var(--color-surface-highlight-primary))] text-[11px] uppercase tracking-wide font-medium">
+          <span className="block text-[var(--color-surface-highlight-primary)] text-[11px] uppercase tracking-wide font-medium">
             Doors opening
           </span>
           <span className="block text-sm font-semibold">{eventDate(event.doorsOpen)}</span>

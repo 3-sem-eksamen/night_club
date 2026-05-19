@@ -9,7 +9,7 @@ const NewsletterSchema = z.object({
     .email("Invalid email address")
     .refine(
       async (email) => {
-        const response = await fetch(`http://localhost:4000/newsletters?email=${email}`, { cache: "no-store" });
+        const response = await fetch(`${process.env.api_url}/newsletters?email=${email}`, { cache: "no-store" });
         const dataEmail = await response.json();
         return dataEmail.length === 0;
       },
@@ -32,7 +32,7 @@ const NewsContainer = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     const date = new Date().toISOString();
     console.log(data);
-    await fetch("http://localhost:4000/newsletters", {
+    await fetch(`${process.env.api_url}/newsletters`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

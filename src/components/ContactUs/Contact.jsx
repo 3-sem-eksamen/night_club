@@ -24,7 +24,7 @@ const Contact = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     const date = new Date().toISOString();
     console.log(data);
-    await fetch("http://localhost:4000/contact_messages", {
+    await fetch(`${process.env.api_url}/contact_messages`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
